@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="HRService"
+  Version="12.2.1.0.31"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true"
+  LoadComponentsLazily="true">
+  <ViewUsage
+    Name="EmployeesView1"
+    ViewObjectName="de.teampb.sammds.model.hr.queries.EmployeesView"/>
+  <ViewUsage
+    Name="EmployeesView2"
+    ViewObjectName="de.teampb.sammds.model.hr.queries.EmployeesView"/>
+  <ViewLinkUsage
+    Name="EmpManagerFkLink1"
+    ViewLinkObjectName="de.teampb.sammds.model.hr.queries.links.EmpManagerFkLink"
+    SrcViewUsageName="de.teampb.sammds.model.hr.services.HRService.EmployeesView1"
+    DstViewUsageName="de.teampb.sammds.model.hr.services.HRService.EmployeesView2"
+    Reversed="false"/>
+</AppModule>
